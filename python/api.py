@@ -7,6 +7,10 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
 
+# DO NOT USE IN PRODUCTION
+from werkzeug.debug import DebuggedApplication
+app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
+
 todos = {}
 
 class TodoSimple(Resource):
