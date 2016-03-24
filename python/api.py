@@ -8,11 +8,6 @@ import scrypt
 app = Flask(__name__)
 api = Api(app)
 
-# DO NOT USE IN PRODUCTION
-from werkzeug.debug import DebuggedApplication
-app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
-# DO NOT USE IN PRODUCTION
-
 SECRET = "N\x8a!Mj#JHjrIW)eBmJ"
 
 ROBOTS = {
